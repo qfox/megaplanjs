@@ -7,37 +7,45 @@ Provides a class that implements Megaplan authentication and request signing.
 Only supports POST requests. The complete API documentation is at:
 http://wiki.megaplan.ru/API
 
+At first you need to install library
+```sh
+npm install -l megaplanjs
+```
+
 Authorization
 =============
 
-To use a password:
-
+To auth using a password:
 ```js
 var megaplan = require ('megaplanjs');
-var client = megaplan.Client('xyz.megaplan.ru');
-[access_id, secret_key] = client.authenticate(login, password);
+var client = new megaplan.Client('my.megaplan.ru').auth('me', 'pass');
+client.on('auth', function (res, err) {
+    // store res.access_id, res.secret_key if you need these (see below)
+    console.log('authenticated', res, err);
+
+    client.get_actual_tasks().send(function (tasks) {
+        console.log(tasks); // a lot of results
+    }, function (err) {
+        console.log(err);
+    });
+});
 ```
 
 To use tokens:
-
 ```js
 var megaplan = require ('megaplanjs');
-# access_id, secret_key = c.authenticate(login, password)
 var client = megaplan.Client('xyz.megaplan.ru', access_id, secret_key);
+client.get_actual_tasks().send(function (tasks) {
+    console.log(tasks); // still a lot of results
+}, function (err) {
+    console.log(err);
+});
 ```
 
 Data requests
 =============
 
-To list actual tasks:
-
-```js
-var res = client.taskList({ status: 'actual' });
-for (var k in res.tasks) {
-    var task = res.tasks[k];
-    console.log(k, task);
-}
-```
+Look sources for information. It's pretty easy to read
 
 
 Copylefts
