@@ -23,7 +23,7 @@ client.on('auth', function (res, err) {
     // store res.access_id, res.secret_key if you need these (see below)
     console.log('authenticated', res, err);
 
-    client.get_actual_tasks().send(function (tasks) {
+    client.tasks().send(function (tasks) {
         console.log(tasks); // a lot of results
     }, function (err) {
         console.log(err);
@@ -35,7 +35,7 @@ To use tokens:
 ```js
 var megaplan = require ('megaplanjs');
 var client = megaplan.Client('xyz.megaplan.ru', access_id, secret_key);
-client.get_actual_tasks().send(function (tasks) {
+client.tasks().send(function (tasks) {
     console.log(tasks); // still a lot of results
 }, function (err) {
     console.log(err);
@@ -45,7 +45,7 @@ client.get_actual_tasks().send(function (tasks) {
 Data requests
 =============
 
-Look sources for information. It's pretty easy to read
+Look `index.js` for information. It's pretty simple to use
 
 
 Copylefts
