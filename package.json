@@ -1,6 +1,6 @@
 {
   "name": "megaplanjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeJS Megaplan API",
   "main": "lib/megaplan.js",
   "scripts": {
@@ -17,5 +17,8 @@
     "node"
   ],
   "author": "Alex Yaroshevich <zxqfox@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "qs": "~0.5.x"
+  }
 }
