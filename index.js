@@ -1,5 +1,5 @@
 
-var MegaplanClient = require ('lib/megaplan.js').Client
+var MegaplanClient = require ('./lib/megaplan.js').Client
   , config = require ('config.js')
   , util = require('util');
 
@@ -10,7 +10,7 @@ client.on('auth', function (res, err) {
 
 	// set default callback to print out the result to console
 	client.callbacks(function (out) {
-		util.debug(out);
+		util.debug(util.inspect(out, false, 5));
 	}, function (err) {
 		util.error(err);
 		(err.error||{}).message && util.error('message', err.error.message);
