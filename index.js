@@ -44,7 +44,7 @@ client.on('auth', function (res, err) {
 			name: 'Testing: Look for a good elephants on the market',
 			statement: 'Go to the market and look for a good, big, mighty elephants to buy',
 			responsible: myId,
-			super_task, out.id,
+			super_task: out.id,
 			deadline: {datetime: new Date(Date.now() + 135*60*1000 /* 135 minutes after now */)},
 			auditors: [0, myId],
 			severity: 'high'
