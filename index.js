@@ -1,6 +1,6 @@
 
 var MegaplanClient = require ('./lib/megaplan.js').Client
-  , config = require ('config.js')
+  , config = require ('./config.js')
   , util = require('util');
 
 var client = new MegaplanClient(config.host).auth(config.user, config.pass);
