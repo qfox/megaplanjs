@@ -8,14 +8,16 @@ Only supports POST requests. The complete API documentation is at:
 https://help.megaplan.ru/API
 
 At first you need to install library
+
 ```sh
-npm install -l megaplanjs
+npm install megaplanjs --save
 ```
 
 Authorization
 =============
 
-To auth using a password:
+To authorize using a password:
+
 ```js
 var megaplan = require ('megaplanjs');
 var client = new megaplan.Client('my.megaplan.ru').auth('me', 'pass');
@@ -31,10 +33,23 @@ client.on('auth', function (res, err) {
 });
 ```
 
-To use tokens:
+To authorize using tokens:
+
 ```js
 var megaplan = require ('megaplanjs');
 var client = megaplan.Client('xyz.megaplan.ru', access_id, secret_key);
+client.tasks().send(function (tasks) {
+    console.log(tasks); // still a lot of results
+}, function (err) {
+    console.log(err);
+});
+```
+
+To authorize using one-time-key:
+
+```js
+var megaplan = require ('megaplanjs');
+var client = megaplan.Client('xyz.megaplan.ru').auth('', '', '4gih4y4gih4yH77QebicH77Qebic');
 client.tasks().send(function (tasks) {
     console.log(tasks); // still a lot of results
 }, function (err) {
