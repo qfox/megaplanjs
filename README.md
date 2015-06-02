@@ -37,7 +37,7 @@ To authorize using tokens:
 
 ```js
 var megaplan = require ('megaplanjs');
-var client = megaplan.Client('xyz.megaplan.ru', access_id, secret_key);
+var client = new megaplan.Client('xyz.megaplan.ru', access_id, secret_key);
 client.tasks().send(function (tasks) {
     console.log(tasks); // still a lot of results
 }, function (err) {
@@ -49,7 +49,7 @@ To authorize using one-time-key:
 
 ```js
 var megaplan = require ('megaplanjs');
-var client = megaplan.Client('xyz.megaplan.ru').auth('', '', '4gih4y4gih4yH77QebicH77Qebic');
+var client = new megaplan.Client('xyz.megaplan.ru').auth('', '', '4gih4y4gih4yH77QebicH77Qebic');
 client.tasks().send(function (tasks) {
     console.log(tasks); // still a lot of results
 }, function (err) {
