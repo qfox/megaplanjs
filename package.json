@@ -19,6 +19,6 @@
   "author": "Alex Yaroshevich <zxqfox@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "qs": "~0.5.x"
+    "qs": "~4.0.0"
   }
 }
