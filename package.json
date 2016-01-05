@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "jsdoc -t node_modules/ink-docstrap/template -d docs -r README.md lib"
+    "docs": "rm -r docs/ && jsdoc -t node_modules/ink-docstrap/template -d docs -r README.md lib"
   },
   "repository": {
     "type": "git",
