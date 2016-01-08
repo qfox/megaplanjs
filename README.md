@@ -13,6 +13,13 @@ At first you need to install library
 npm install megaplanjs --save
 ```
 
+You can generate documentaion with commands:
+
+```sh
+npm install
+npm run docs
+```
+
 Authorization
 =============
 

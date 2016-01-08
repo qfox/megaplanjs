@@ -5,7 +5,8 @@
   "main": "lib/megaplan.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "rm -r docs/ && node node_modules/jsdoc/jsdoc.js -t node_modules/ink-docstrap/template -c node_modules/ink-docstrap/template/jsdoc.conf.json -d docs -r README.md lib"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "qs": "~4.0.0"
+  },
+  "devDependencies": {
+    "ink-docstrap": "^1.1.0",
+    "jsdoc": "^3.4.0"
   }
 }
