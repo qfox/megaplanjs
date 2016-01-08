@@ -15,9 +15,8 @@ npm install megaplanjs --save
 
 You can generate documentaion with commands:
 
-```
+```sh
 npm install
-npm install jsdoc -g
 npm run docs
 ```
 
