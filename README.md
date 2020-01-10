@@ -1,7 +1,7 @@
 Megaplan client module for NodeJS
 ---------------------------------
 
-A NodeJS library to work with megaplan.ru API
+A NodeJS library to work with megaplan.ru API ver. 1
 
 Provides a class that implements Megaplan authentication and request signing.
 Only supports POST requests. The complete API documentation is at:
