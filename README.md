@@ -69,6 +69,7 @@ Usage
 
 ```js
 var megaplan = require("megaplanjs");
+// SET here your megaplan URL, login and password
 var client = new megaplan.Client("my.megaplan.ru").auth("me", "pass");
 
 client.on("auth", function(res, err) {
