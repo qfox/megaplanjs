@@ -73,13 +73,14 @@ var client = new megaplan.Client("my.megaplan.ru").auth("me", "pass");
 
 client.on("auth", function(res, err) {
   // show user's tasks
-  client.tasks({ folder: "owner" }).send();
-
-  // global serach for a Keyword
-  client.search("Keyword").send();
-
-  // fetch employees
-  client.employees().send();
+  client.tasks({ folder: "owner" }).send(
+    function(tasks) {
+      console.log(tasks);
+    },
+    function(err) {
+      console.log(err);
+    }
+  );
 });
 ```
 
