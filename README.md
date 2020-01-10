@@ -64,11 +64,26 @@ client.tasks().send(function (tasks) {
 });
 ```
 
-Data requests
-=============
+Usage
+=====
 
-Look `index.js` for information. It's pretty simple to use
+```js
+var megaplan = require("megaplanjs");
+var client = new megaplan.Client("my.megaplan.ru").auth("me", "pass");
 
+client.on("auth", function(res, err) {
+  // show user's tasks
+  client.tasks({ folder: "owner" }).send();
+
+  // global serach for a Keyword
+  client.search("Keyword").send();
+
+  // fetch employees
+  client.employees().send();
+});
+```
+
+Look `index.js` for more examples. It's pretty simple to use
 
 Copylefts
 =========
