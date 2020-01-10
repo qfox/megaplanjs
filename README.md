@@ -5,7 +5,7 @@ A NodeJS library to work with megaplan.ru API ver. 1
 
 Provides a class that implements Megaplan authentication and request signing.
 Only supports POST requests. The complete API documentation is at:
-https://help.megaplan.ru/API
+https://dev.megaplan.ru/api/index.html
 
 At first you need to install library
 
