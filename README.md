@@ -1,11 +1,11 @@
 Megaplan client module for NodeJS
 ---------------------------------
 
-A NodeJS library to work with megaplan.ru API
+A NodeJS library to work with megaplan.ru API ver. 1
 
 Provides a class that implements Megaplan authentication and request signing.
 Only supports POST requests. The complete API documentation is at:
-https://help.megaplan.ru/API
+https://dev.megaplan.ru/api/index.html
 
 At first you need to install library
 
@@ -64,11 +64,28 @@ client.tasks().send(function (tasks) {
 });
 ```
 
-Data requests
-=============
+Usage
+=====
 
-Look `index.js` for information. It's pretty simple to use
+```js
+var megaplan = require("megaplanjs");
+// SET here your megaplan URL, login and password
+var client = new megaplan.Client("my.megaplan.ru").auth("me", "pass");
 
+client.on("auth", function(res, err) {
+  // show user's tasks
+  client.tasks({ folder: "owner" }).send(
+    function(tasks) {
+      console.log(tasks);
+    },
+    function(err) {
+      console.log(err);
+    }
+  );
+});
+```
+
+Look `index.js` for more examples. It's pretty simple to use
 
 Copylefts
 =========
