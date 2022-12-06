@@ -20,7 +20,7 @@
   "author": "Alex Yaroshevich <zxqfox@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "qs": "~6.0.4"
+    "qs": "~6.2.4"
   },
   "devDependencies": {
     "ink-docstrap": "^1.1.0",
